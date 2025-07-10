@@ -1,0 +1,13 @@
+{
+  "resourceName": "ticketpdfstorage",
+  "policyUUID": "641d8fcf",
+  "bucketName": "eventticketingsystem61df3eeecd8a4657ab5d8202b9e",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

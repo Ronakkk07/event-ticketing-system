@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-eventticketingsystem-dev-3f50f-authRole",
+      "UnauthRoleArn": "arn:aws:iam::350816889323:role/amplify-eventticketingsystem-dev-3f50f-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::350816889323:role/amplify-eventticketingsystem-dev-3f50f-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-eventticketingsystem-dev-3f50f-deployment",
+      "UnauthRoleName": "amplify-eventticketingsystem-dev-3f50f-unauthRole",
+      "StackName": "amplify-eventticketingsystem-dev-3f50f",
+      "StackId": "arn:aws:cloudformation:ap-south-1:350816889323:stack/amplify-eventticketingsystem-dev-3f50f/5fb8c870-5c06-11f0-8ede-06c4b1e3c4a7",
+      "AmplifyAppId": "d3d92mehvgo5ev"
+    },
+    "categories": {
+      "auth": {
+        "eventticketingsystemd02f067c": {}
+      },
+      "api": {
+        "eventticketingsystem": {}
+      },
+      "function": {
+        "generateTicket": {}
+      }
+    }
+  }
+}

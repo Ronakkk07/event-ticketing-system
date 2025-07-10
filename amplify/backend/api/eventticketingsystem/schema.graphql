@@ -1,0 +1,48 @@
+type Event
+  @model
+  @auth(rules: [{ allow: owner }, { allow: groups, groups: ["organizer"] }]) {
+  id: ID!
+  title: String!
+  description: String
+  date: AWSDateTime!
+  location: String
+  organizerId: ID!
+  registrations: [Registration] @hasMany(indexName: "byEvent", fields: ["id"])
+}
+
+type Registration
+  @model
+  @key(name: "byEvent", fields: ["eventId"])
+  @auth(rules: [{ allow: owner }, { allow: groups, groups: ["organizer"] }]) {
+  id: ID!
+  eventId: ID!
+  userId: ID!
+  timestamp: AWSDateTime!
+  ticket: Ticket @hasOne
+  status: String
+}
+
+type Ticket
+  @model
+  @auth(rules: [{ allow: owner }, { allow: groups, groups: ["organizer"] }]) {
+  id: ID!
+  qrCode: String!
+  s3Link: String
+  status: String!
+}
+
+type TicketResponse {
+  message: String
+  downloadLink: String
+}
+
+extend type Mutation {
+  registerForEvent(
+    userName: String!
+    userEmail: String!
+    eventName: String!
+    ticketId: String!
+  ): TicketResponse @function(name: "GenerateTicketPDF-${env}")
+}
+
+
